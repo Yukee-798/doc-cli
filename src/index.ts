@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import { init } from './commands';
 import { desc, tags, time, version } from './options';
 import { cmdWithOpts, fileHandler } from './utils';
+
 const program = new Command();
 
 program.description('CLI to generate a blog template');
@@ -30,25 +31,15 @@ cmdWithOpts(program, {
       '/Users/yukee798/Downloads/remain/Yukee-798.github.io/blog';
     const blogFilePath = `${blogRootPath}/${blogFilename}/index.md`;
 
-    const typoraPath = '/Applications/Typora.app/Contents/MacOS/Typora';
-
-    // const blogContent = await fileHandler.read(blogFilePath);
-    // console.log(blogContent);
-
     // 1. 创建 blog/`${time}-${value}`/index.md 这个目录
-    fileHandler
-      .createPath(
-        blogFilePath,
-        'file',
-        initialBlogContent(blogTitle, blogTags, desc)
-      )
-      .then(() => {
-        console.log('123')
-        fileHandler.exec(blogFilePath);
-      });
+    await fileHandler.createPath(
+      blogFilePath,
+      'file',
+      initialBlogContent(blogTitle, blogTags, desc)
+    );
 
     // 2. 使用 Typora 打开该 markdown
-    // await
+    await fileHandler.execCmd(`open -a typora ${blogFilePath}`);
   }
 );
 

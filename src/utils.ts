@@ -1,6 +1,6 @@
 import { Command } from 'commander';
 import { constants, promises } from 'fs';
-import { execFile } from 'child_process';
+import { exec } from 'child_process';
 
 export type CommandCreator = (program: Command) => Command;
 
@@ -53,13 +53,7 @@ export const fileHandler = {
     }
   },
   // 打开一个应用，且使用目标工作目录
-  async exec(filePath: string) {
-    execFile(filePath, {}, (err, stdout, stderr) => {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log(stdout);
-      }
-    });
+  async execCmd(cmd: string) {
+    exec(cmd);
   },
 };
