@@ -1,4 +1,9 @@
-export const initialBlogContent = (blogTitle: string, blogTags: string, desc: string) => (`---
+export const initialBlogContent = (
+  blogTitle: string,
+  blogTags: string,
+  desc: string
+) => `
+---
 slug: ${blogTitle}
 title: ${blogTitle}
 tags: ${blogTags}
@@ -7,4 +12,4 @@ tags: ${blogTags}
 ${desc}
 
 <!--truncate-->
-`);
+`;
