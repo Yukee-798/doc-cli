@@ -13,3 +13,6 @@ ${desc}
 
 <!--truncate-->
 `;
+
+export const blogRootPath =
+  '/Users/yukee798/Downloads/remain/Yukee-798.github.io/blog';

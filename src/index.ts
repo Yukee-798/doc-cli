@@ -1,4 +1,4 @@
-import { initialBlogContent } from './constant';
+import { initialBlogContent, blogRootPath } from './constant';
 import { Command } from 'commander';
 import { init } from './commands';
 import { desc, tags, time, version } from './options';
@@ -27,8 +27,6 @@ cmdWithOpts(program, {
     const blogTitle = `${value}`; // 文章的标题
     const blogFilename = `${time}-${value}`; // e.g. 2020-01-01-React18新特性，是 blog 目录下的文件名
     const blogTags = `[${tags.join(', ')}]`;
-    const blogRootPath =
-      '/Users/yukee798/Downloads/remain/Yukee-798.github.io/blog';
     const blogFilePath = `${blogRootPath}/${blogFilename}/index.md`;
 
     // 1. 创建 blog/`${time}-${value}`/index.md 这个目录
