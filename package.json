@@ -2,6 +2,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
+  "name": "@auro-cli/doc",
+  "author": "yukee-798",
   "bin": {
     "doc": "bin/doc.js"
   },
@@ -33,8 +35,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "doc-cli",
-  "author": "yukee-798",
   "module": "dist/doc-cli.esm.js",
   "size-limit": [
     {
